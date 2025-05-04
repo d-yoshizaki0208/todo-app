@@ -1,0 +1,57 @@
+project:
+  name: "ToDoリストアプリ MVP"
+  description: "React + TypeScript + Tailwind CSS を使ったシンプルなToDoリストのMVP実装"
+  goal: "最低限のタスク管理ができるWebアプリを素早く構築し、状態管理とローカルストレージを用いたデータ永続性を確保する"
+  authors:
+    - your-name-here
+  createdAt: 2025-05-04
+  updatedAt: 2025-05-04
+
+code:
+  language: TypeScript
+  framework: React
+  styling: Tailwind CSS
+  stateManagement: React Hooks (useState, useEffect)
+  buildTool: Vite
+  folderStructure:
+    components: "src/components/"
+    types: "src/types/index.ts に Todo 型を定義"
+    hooks: "src/hooks/useTodos.ts を使用"
+    utils: "src/utils/localStorage.ts にローカルストレージ関連の関数を定義"
+  componentGuidelines:
+    Header: "アプリタイトルのみ表示。状態管理なし。"
+    TodoForm: "入力状態を内部で保持し、addTodo を props 経由で呼び出す"
+    TodoList: "todos, toggleTodo, deleteTodo を props として受け取り TodoItem を map で描画"
+    TodoItem: "props で受け取った todo の完了状態や削除処理を呼び出す。内部状態なし。"
+    Footer: "activeCount, totalCount を表示するだけのコンポーネント"
+  customHooks:
+    useTodos: "Todo一覧、追加、削除、切り替えのロジックをまとめる。ローカルストレージとも連携。"
+  codingRules:
+    useTypeScriptStrict: true
+    noAny: true
+    preferFunctionalComponents: true
+    componentNaming: PascalCase
+    fileNaming: kebab-case
+    avoidPropDrilling: true
+    preferTailwindUtility: true
+    noGlobalCSS: true
+
+constraints:
+  noBackend: true
+  noExternalAPI: true
+  noRouting: true
+  singlePageApp: true
+  explanation:
+    - "このMVPではバックエンド連携やAPI通信を行わず、ローカルストレージのみでデータを管理する"
+    - "React Router などのルーティング機能は使用しない"
+    - "単一画面で完結する操作性を優先する"
+
+goals:
+  - "すべての基本機能（追加・削除・完了切り替え）を満たすこと"
+  - "ローカルストレージに正しく保存・復元できること"
+  - "見た目が最低限整っていて、操作しやすいUIであること"
+
+checklist:
+  file: sources/todo-checklist.md
+  rule: "各タスクの完了時には、Markdown形式のチェックボックスを [x] に変更して進捗を記録すること"
+  enforce: true
